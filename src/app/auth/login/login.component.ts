@@ -24,10 +24,12 @@ export class LoginComponent implements OnInit {
       passWord: this.passWord.value
     }
     this.authService.login(user).subscribe((res) => {
+       this.authService
     }, err => {
       console.log(err);
     });
   }
+
 
 
 }

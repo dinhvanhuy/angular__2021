@@ -16,10 +16,20 @@
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
         </form>
+        <div class="dropdown me-1" *ngIf="(authService.currentUser$ | async)">
+          <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
+            Hello {{username}}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+            <li><a class="dropdown-item" href="#"></a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+        <div class="text-end" *ngIf="(authService.currentUser$ | async) == null">
+          <button type="button" routerLink="/auth/login" class="btn btn-outline-light me-2">Login</button>
+          <button type="button"  routerLink="/auth/register" class="btn btn-warning">Sign-up</button>
         </div>
       </div>
     </div>
