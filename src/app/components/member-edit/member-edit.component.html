@@ -1,0 +1,46 @@
+
+<div class="container">
+    <div class="row mt-5 mb-5" [formGroup]="memberEditForm">
+        <div class="col-md-8 m-auto">
+            <ngx-spinner 
+            bdColor="rgba(255,255,255,0)"
+            color="#3333"
+            size="medium"
+            type="ball-clip-rotate-multiple"
+            >
+        </ngx-spinner>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Introduction</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="introduction"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="Interests" class="form-label">Interests</label>
+                <textarea class="form-control" id="Interests" rows="3" formControlName="interests"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="Looking For" class="form-label">Looking For</label>
+                <textarea class="form-control" id="Looking For" rows="3" formControlName="lookingFor"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="Country" class="form-label">Country</label>
+                <input type="text" class="form-control" id="Country" formControlName="country">
+              </div>
+
+              <div class="mb-3">
+                <label for="Date of birth" class="form-label">Date of birth</label>
+                <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd"
+                           name="dp"  ngbDatepicker #d="ngbDatepicker" formControlName="dateOfBirth">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">Select</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="mb-3 p-2">
+                <button type="button" class="mr-4 btn btn-outline-primary" (click)="save()">Save</button>
+                <button type="button" class="btn btn-outline-primary ml-2" (click)="cancle()">Cancle</button>
+              </div>
+        </div>
+    </div>
+</div>

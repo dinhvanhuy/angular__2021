@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-6 m-auto">
+        <div class="col-md-6 m-auto" [formGroup]="formRegister">
             <label for="inputUserName" class="col-sm-2 col-form-label">UserName</label>
             <div class="col-sm-10">
-              <input name="userName" [formControl]="userName" type="text" class="form-control" id="inputUserName" >
+                <input name="userName" formControlName="userName" type="text" class="form-control" id="inputUserName">
             </div>
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input name="passWord" type="password" class="form-control" id="inputPassword" [formControl]="passWord">
+                <input name="passWord" type="password" class="form-control" id="inputPassword" formControlName="passWord">
             </div>
             <div class="col-sm-10 mt-3 d-flex flex-row-reverse">
-                <button type="button" class="btn btn-outline-primary" (click)="login()">Login</button>
+                <button type="button" class="btn btn-outline-primary" (click)="register()">Register</button>
             </div>
         </div>
     </div>

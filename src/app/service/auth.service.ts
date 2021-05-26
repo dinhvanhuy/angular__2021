@@ -26,7 +26,7 @@ export class AuthService {
       let token = currentUser['token'];
       this.httpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':  'application/json',
+          'Content-Type':  'application/json; multipart/form-data',
           Authorization: `Bearer ${token}`
         })
       };

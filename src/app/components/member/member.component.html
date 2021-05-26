@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <div class="row">
+        <ng-container  *ngFor="let member of listMembers; let i = index">
+            <div class="card col-md-2 mb-2">
+                <img [src]="member.photoUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{member.userName}}</h5>
+                  <p class="card-text line-clamp">{{member.introduction }}</p>
+                  <a href="javascript:void(0)" class="btn btn-primary">View Detail</a>
+                </div>
+              </div>
+        </ng-container>
+          
+    </div>
+</div>
